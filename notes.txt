@@ -1,0 +1,39 @@
+--------------------- PACKAGE.JSON ---------------------
+
+in 'package.json' in the top level
+in put script as
+
+    "scripts": {
+        "server": "nodemon backend/server.js",
+        "client": "npm run dev --prefix frontend",
+        "dev": "concurrently \"num run server\" \"npm run client\""
+    },
+
+to be able to run both frontend and backend from main root
+* will need  'npm i -D concurrently' in main root
+
+=======================================================
+--------------------- VITE.CONFIG ---------------------
+
+Set server to switch 'port' to 3000 (optional)
+
+Set 'proxy'. So, when we make request to the backend, we don't have to put http://localhost:3303
+Whenever the route direct to anything with '/api', 
+then it will have a target which is http://localhost:3303
+
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [react()],
+    server: {
+        port: 3000,
+        proxy: {
+            "/api": {
+                target: "http://localhost:3303",
+                changeOrigin: true,
+            },
+        },
+    },
+});

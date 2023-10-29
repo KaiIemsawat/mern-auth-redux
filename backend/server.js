@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import colors from "colors";
 
 import userRoutes from "./routes/userRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
@@ -20,4 +21,6 @@ app.use(errorHandler);
 
 app.get("/", (req, res) => res.send("server is ready"));
 
-app.listen(port, () => console.log(`SERVER'S STARTED ON PORT -- ${port}`));
+app.listen(port, () =>
+    console.log(`SERVER'S STARTED ON PORT ----- ${port}`.cyan)
+);
