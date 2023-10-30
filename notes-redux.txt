@@ -31,3 +31,12 @@ export default authSlice.reducer;
 // Not confirm these concepts!!
 // What we call is action
 // What we change is reducer
+
+In order to use any slice, we need to bring it to 'store'
+
+Create thunk middleware
+apiSlice.js is for implementing 'thunk middleware'
+need to import below
+import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
+
+Then, check 'userApiSlice'

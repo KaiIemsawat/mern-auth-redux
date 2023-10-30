@@ -32,3 +32,5 @@ export default authSlice.reducer;
 // Not confirm these concepts!!
 // What we call is action
 // What we change is reducer
+
+// Then, in order to use any slice, we need to bring it to store. 'store.js', in this case
