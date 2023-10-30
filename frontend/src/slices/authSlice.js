@@ -26,6 +26,7 @@ const authSlice = createSlice({
 });
 
 export const { setCredentials, logout } = authSlice.actions;
+// this logout will also be used in 'Header.jsx'
 
 export default authSlice.reducer;
 
