@@ -37,3 +37,24 @@ export default defineConfig({
         },
     },
 });
+
+
+=================================================
+--------------------- TOAST ---------------------
+Frontend
+npm i react-toastify
+
+In 'App.jsx',
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+add <ToastContainer /> below <Header />
+
+In 'LoginScreen.jsx',
+import { toast } from "react-toastify";
+
+example way to use
+catch (error) {
+            toast.error(error?.data?.message || error.error);
+            console.error(error?.data?.message || error.error);
+        }
