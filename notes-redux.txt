@@ -1,0 +1,33 @@
+===============================================================
+--------------------- REDUX/REDUX-TOOLKIT ---------------------
+
+First - npm i @reduxjs/toolkit react-redux
+In client/frontend side,
+create store.js 
+
+In main.jsx
+import { Provider } from "react-redux";
+
+Then, wrap tags with Provider as example below
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <Provider store={store}>
+        <React.StrictMode>
+            <RouterProvider router={router} />
+        </React.StrictMode>
+    </Provider>
+);
+
+
+Create slices (check slices/authSlice.js)
+
+Export slices
+- export 'action' in this pattern below
+export const {setCredentials, logout} = authSlice.actions
+
+- export default 'reducer' in this pattern below
+export default authSlice.reducer;
+
+// Not confirm these concepts!!
+// What we call is action
+// What we change is reducer
