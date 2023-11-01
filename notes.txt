@@ -58,3 +58,14 @@ catch (error) {
             toast.error(error?.data?.message || error.error);
             console.error(error?.data?.message || error.error);
         }
+
+=================================================
+--------------------- Prevent logged user to certain page ---------------------
+
+To logged user to certain page, 
+- start by create 'PrivateRoute.jsx'
+- import 'PrivateRoute.jsx' to 'main.jsx'
+- in 'main.jsx', 
+            <Route path="" element={<PrivateRoute />}>
+                <Route path="/profile" element={<ProfileScreen />} />
+            </Route>
